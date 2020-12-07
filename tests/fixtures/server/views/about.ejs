@@ -1,0 +1,24 @@
+<%- ejsVisualizerHelper(__filename) %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./partials/_head')  %>
+<body>
+  <header>
+    <%- include('./partials/_logo')  %>
+    <h1>About</h1>
+    <%- include('./partials/_nav')  %> 
+  </header>
+  <main>
+    <article>
+      <header>
+        <h1>Page Content</h1>
+      </header>
+      <div>
+        <p><%= content %></p>
+      </div>
+    </article>
+  </main>
+  <%- include('./partials/_footer')  %> 
+</body>
+</html>
+<%- ejsVisualizerHelper() %>

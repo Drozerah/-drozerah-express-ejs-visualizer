@@ -1,0 +1,108 @@
+$deep-black:#000000;
+$black:#242424;
+$black-ligthen-1:#292a2d;
+$black-ligthen-2:#454545;
+$black-ligthen-3:#4f4f4f;
+$gray: #919191;
+$gray-ligthen-1: #c0c0c0;
+$gray-ligthen-2: #e1e1e1;
+$blue-gray:#95acb9;
+$blue:#5db0d7;
+$orange:#ffa24d;
+$orange-ligthen-1:#e6bf6b;
+$green:#33c09f;
+$green-ligthen-1:#7ef0eb;
+
+*{
+  box-sizing: border-box;
+}
+html, body{
+  height: 100vh;
+  margin: 0px;
+}
+body {
+  color: $gray-ligthen-2;
+  font-family: monospace;
+  background-color: $black;
+  font-weight: 100 !important;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  // color:$green;
+  color:$orange-ligthen-1;
+  text-decoration: none;
+  &:hover{
+    color:$orange-ligthen-1;
+    text-decoration: underline;
+  }
+  &.active{
+    color:$orange;
+    &:hover{
+      // color:$orange-ligthen-1;
+      text-decoration: underline;
+    }
+  }
+}
+
+#logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#github{
+  transform: translateY(2px);
+}
+
+
+header {
+  img{
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
+    fill: honeydew;
+  }
+  h1{
+    font-weight: 100;
+  }
+}
+
+nav {
+  font-size: 20px;
+  a{
+    padding: 3px;
+  }
+  ul {
+    display: flex;
+    padding-left: 0px;
+    li {
+      list-style-type: none;
+      span {
+        color: $black-ligthen-3;
+      }
+    }
+  }
+}
+
+footer{
+  margin-top: auto;
+}
+
+.blink {
+  opacity: 0;
+  animation: blinking 1s linear infinite;
+}
+
+@keyframes blinking {
+  from,
+  49.9% {
+    opacity: 0;
+  }
+  50%,
+  to {
+    opacity: 1;
+  }
+}

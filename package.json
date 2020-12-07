@@ -1,0 +1,49 @@
+{
+  "name": "@drozerah/express-ejs-visualizer",
+  "version": "0.1.0",
+  "description": "Express.js ejs partials visualizer",
+  "main": "index.js",
+  "files": [
+    "lib/index.js"
+  ],
+  "scripts": {
+    "test": "cross-env NODE_ENV=test mocha tests/*.js --exit",
+    "test:dev": "cross-env NODE_ENV=development mocha tests/*.spec.js --exit",
+    "fixture:dev:serve": "cross-env NODE_ENV=development nodemon ./tests/fixtures/server/server.js",
+    "fixture:test:serve": "cross-env NODE_ENV=test nodemon ./tests/fixtures/server/server.js",
+    "fixture:prod:serve": "cross-env NODE_ENV=production nodemon ./tests/fixtures/server/server.js",
+    "coverage": "nyc npm run test",
+    "ejs:clean": "node ejs.clean.js",
+    "eslint": "eslint . --ext .js"
+  },
+  "keywords": [
+    "express",
+    "ejs",
+    "visualizer",
+    "productivity"
+  ],
+  "author": "Thomas G. aka Drozerah <drozerah@gmail.com> (https://github.com/Drozerah)",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "cross-env": "^7.0.2",
+    "ejs": "^3.1.5",
+    "jsdom": "^16.4.0",
+    "recursive-readdir": "^2.2.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-dom": "^1.8.2",
+    "chai-http": "^4.3.0",
+    "eslint": "^7.14.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "express": "^4.17.1",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0"
+  }
+}

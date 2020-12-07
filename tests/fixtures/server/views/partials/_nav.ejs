@@ -1,0 +1,9 @@
+<%- ejsVisualizerHelper(__filename) %>
+<nav>
+  <ul>
+    <li><a href="/" class="nav-link <%= pageName === 'home' ? 'active' : null %>">Home</a></li>
+    <li><span>|</span></li>
+    <li><a href="/about" class="nav-link <%= pageName === 'about' ? 'active' : null %>">About</a></li>
+  </ul>
+</nav>
+<%- ejsVisualizerHelper() %>
