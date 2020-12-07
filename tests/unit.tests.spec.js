@@ -1,6 +1,6 @@
 const chalk = require('chalk')
-const fs = require('fs').promises
-const fse = require('fs-extra')
+// const fs = require('fs').promises
+const fs = require('fs-extra')
 const options = {
   mode: 0o2775
 }
@@ -108,7 +108,7 @@ describe(`${chalk.yellow(`> mocha ${path.basename(__filename)}\n`)}`, function (
           expect((async () => {
             try {
               // create tests/fixture/temp directory if necesary
-              await fse.ensureDir(path.join(__dirname, 'fixtures', 'temp'), options)
+              await fs.ensureDir(path.join(__dirname, 'fixtures', 'temp'), options)
               // create fixture file
               // create fixture filename
               const fileName = `${Date.now()}.ejs`
