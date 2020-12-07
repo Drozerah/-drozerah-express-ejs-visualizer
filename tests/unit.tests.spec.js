@@ -41,7 +41,7 @@ const dummyPromise = (delay) => {
   })
 }
 
-describe(`${chalk.yellow(`> mocha ${path.basename(__filename)}\n`)}`, function () {
+describe.skip(`${chalk.yellow(`> mocha ${path.basename(__filename)}\n`)}`, function () {
   describe('Start with dummy tests', function () {
     it('is passed', function () {
       return expect(true).to.be.true

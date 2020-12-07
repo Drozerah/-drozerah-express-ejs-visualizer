@@ -7,7 +7,7 @@
     "lib/index.js"
   ],
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha tests/unit.tests.spec.js",
+    "test": "cross-env NODE_ENV=test mocha tests/*.tests.spec.js",
     "test:exit": "cross-env NODE_ENV=test mocha tests/*.js --exit",
     "test:dev": "cross-env NODE_ENV=development mocha tests/*.spec.js --exit",
     "fixture:dev:serve": "cross-env NODE_ENV=development nodemon ./tests/fixtures/server/server.js",
