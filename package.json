@@ -7,13 +7,15 @@
     "lib/index.js"
   ],
   "scripts": {
-    "test": "cross-env NODE_ENV=test mocha tests/*.js",
+    "test": "cross-env NODE_ENV=test mocha tests/unit.tests.spec.js",
     "test:exit": "cross-env NODE_ENV=test mocha tests/*.js --exit",
     "test:dev": "cross-env NODE_ENV=development mocha tests/*.spec.js --exit",
     "fixture:dev:serve": "cross-env NODE_ENV=development nodemon ./tests/fixtures/server/server.js",
     "fixture:test:serve": "cross-env NODE_ENV=test nodemon ./tests/fixtures/server/server.js",
     "fixture:prod:serve": "cross-env NODE_ENV=production nodemon ./tests/fixtures/server/server.js",
-    "coverage": "nyc npm run test",
+    "coverage": "nyc --check-coverage npm run test",
+    "coverage:doc": "nyc --reporter=html --reporter=text npm run test",
+    "coverage:dev": "nyc npm run test",
     "ejs:clean": "node ejs.clean.js",
     "eslint": "eslint . --ext .js"
   },
@@ -29,6 +31,7 @@
     "chalk": "^4.1.0",
     "cross-env": "^7.0.2",
     "ejs": "^3.1.5",
+    "fs-extra": "^9.0.1",
     "jsdom": "^16.4.0",
     "recursive-readdir": "^2.2.2"
   },
@@ -44,6 +47,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "express": "^4.17.1",
     "mocha": "^8.2.1",
+    "node-fs-extra": "^0.8.2",
     "nodemon": "^2.0.6",
     "nyc": "^15.1.0"
   }
