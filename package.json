@@ -1,6 +1,6 @@
 {
   "name": "@drozerah/express-ejs-visualizer",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Express.js ejs partials visualizer",
   "main": "index.js",
   "files": [
