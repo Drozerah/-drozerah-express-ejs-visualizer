@@ -58,6 +58,15 @@ describe(`${chalk.yellow(`> mocha ${path.basename(__filename)}\n`)}`, function (
   })
 
   describe('Test suit for Class EjsVisualizerService members:', function () {
+    describe('tests for .ejsVisualizerHelper', function () {
+      it('should return well formatted HTML markup', function () {
+        const expected = `
+<div class="ejs-debug-view--filename">${__filename.replace(process.cwd(), '')}</div>
+<div class="ejs-debug-view--container">`
+        expect(EjsVisualizerService.ejsVisualizerHelper(__filename)).to.be.equal(expected)
+        expect(EjsVisualizerService.ejsVisualizerHelper()).to.be.equal('</div>')
+      })
+    })
     describe('tests for .bufferConcatAsync Promise:', function () {
       it('is rejected with ReferenceError', function () {
         return Promise.all([
