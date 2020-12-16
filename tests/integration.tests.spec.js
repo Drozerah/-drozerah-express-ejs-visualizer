@@ -82,11 +82,24 @@ describe(`${chalk.yellow(`> mocha ${path.basename(__filename)}\n`)}`, function (
     it('should redirect with status of 302', function (done) {
       chai.request(app)
         .post('/ejs-debug')
-        .send({ url: '/' })
+        .send({ url: '/any' })
         .redirects(0)
         .end((err, res) => {
           if (err) done(err)
           expect(res).to.have.status(302)
+          done()
+        })
+    })
+  })
+  describe('POST /test', function () {
+    it('should respond with text ok', function (done) {
+      chai.request(app)
+        .post('/test')
+        .send({ url: '/any' })
+        .end((err, res) => {
+          if (err) done(err)
+          expect(res).to.have.status(200)
+          expect(res.text).to.equal('ok')
           done()
         })
     })

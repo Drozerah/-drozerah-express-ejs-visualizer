@@ -14,6 +14,10 @@ class AppController {
       content: 'This is the about page.'
     })
   }
+
+  static postTest (req, res, next) {
+    res.send('ok')
+  }
 }
 
 module.exports = AppController

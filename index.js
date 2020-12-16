@@ -47,6 +47,9 @@ const ejsVisualizer = (app, option = {}) => {
     try {
       // console.log('> ejsVisualizer middleware call') // !DEBUG
       const url = await req.url // data from front form hidden input
+      const body = await req.body // any posted data
+      // call next if req.body is not empty and if request endpoint is not '/ejs-debug'
+      if (Object.keys(body).length !== 0 && url !== debugPostEndpoint) return next()
       // call next if request is icon
       if (req.url.includes('.ico')) return next()
       // handle form POST request

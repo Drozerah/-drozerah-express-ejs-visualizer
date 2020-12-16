@@ -34,6 +34,7 @@ app.use(ejsVisualizer(app, {
 // Routes
 app.get('/', AppController.getIndex)
 app.get('/about', AppController.getAbout)
+app.post('/test', AppController.postTest)
 
 // 404
 app.use((req, res, next) => {
