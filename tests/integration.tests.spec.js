@@ -9,6 +9,10 @@ const chaiDom = require('chai-dom') // https://www.chaijs.com/plugins/chai-dom/
 const jsdom = require('jsdom') // https://github.com/jsdom/jsdom
 const { JSDOM } = jsdom
 
+// clean views files
+const { EjsVisualizerService } = require('../lib/index')
+const views = path.join(process.cwd(), './tests/fixtures/server/views')
+
 const app = require('./fixtures/server/server')
 
 // Configure chai
@@ -17,6 +21,11 @@ chai.use(chaiDom)
 chai.should()
 
 describe(`${chalk.yellow(`> mocha ${path.basename(__filename)}\n`)}`, function () {
+  after(function () {
+    EjsVisualizerService.ejsRestoreAsync(views).then(
+      console.log(chalk.green('\n[x] clean ejs files after test suit done!'))
+    )
+  })
   describe('Start with dummy test', function () {
     it('is passed', function () {
       expect('drozerah').to.be.equal('drozerah')
